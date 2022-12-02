@@ -1,3 +1,14 @@
+import Header from '../components/Header';
+import React from 'react';
+import OurTeam from '../components/OurTeam';
+import Features from '../components/Features';
+
 export default function Home() {
-  return <h1 className="text-3xl underline">Hello world!</h1>;
+  return (
+    <>
+      <Header />
+      <Features />
+      <OurTeam />
+    </>
+  );
 }

@@ -10,7 +10,7 @@ export default function Navigation() {
   const { navigation, isCurrentPathname } = useNavigation();
 
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-slate-800">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -40,8 +40,8 @@ export default function Navigation() {
                         href={item.href}
                         className={classNames(
                           isCurrentPathname(item.href)
-                            ? 'bg-gray-900 text-white'
-                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            ? 'bg-slate-900 text-white'
+                            : 'text-slate-300 hover:bg-slate-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
                         aria-current={
