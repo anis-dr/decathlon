@@ -47,7 +47,7 @@ const SearchForm = ({
       },
       body: JSON.stringify({
         url: fileUrl,
-        token: localStorage.getItem('token'),
+        token: localStorage.getItem('access_token'),
       }),
     });
     const json = await res.json();
