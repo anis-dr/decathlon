@@ -37,6 +37,7 @@ const SearchForm = ({
   setProducts: (data: Item[]) => void;
 }) => {
   const [fileUrl, setFileUrl] = useState('');
+  const [apiKey, setApiKey] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,7 +48,7 @@ const SearchForm = ({
       },
       body: JSON.stringify({
         url: fileUrl,
-        token: localStorage.getItem('access_token'),
+        token: apiKey,
       }),
     });
     const json = await res.json();
@@ -70,6 +71,9 @@ const SearchForm = ({
           'expires_in',
           (Date.now() + res.expires_in).toString()
         );
+        setApiKey(res.access_token);
+      } else {
+        setApiKey(localStorage.getItem('access_token') || '');
       }
     };
 
